@@ -1,0 +1,8 @@
+{
+  "name": "FootballFeed",
+  "app_id": "deadf6eb",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
