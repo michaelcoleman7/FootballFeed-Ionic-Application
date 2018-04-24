@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Storage } from '@ionic/storage';
+import { AboutPage } from '../about/about';
 
 @IonicPage()
 @Component({
@@ -8,12 +9,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
+    LeagueChosen: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage) {
+   
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+  }
+
+  update(){
+    this.storage.set('League_id' , this.LeagueChosen);
+    this.navCtrl.push(AboutPage, {
+       leagueValue: this.LeagueChosen
+    });
+  }
+
+  getData(){
+      this.storage.get('League_id').then((data) =>{
+      console.log(data);
+    }); 
   }
 
 }

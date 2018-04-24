@@ -8,5 +8,39 @@
 
 
 <ion-content padding>
+<ion-list radio-group [(ngModel)]="LeagueChosen">
 
+  <ion-list-header>
+    League Selection
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Premier League(England)</ion-label>
+    <ion-radio value="398"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>La Liga (Spain)</ion-label>
+    <ion-radio value="399"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Serie A (Italy)</ion-label>
+    <ion-radio value="401"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bundesliga</ion-label>
+    <ion-radio value="394"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ligue 1</ion-label>
+    <ion-radio value="396"></ion-radio>
+  </ion-item>
+
+</ion-list>
+<form (ngSubmit) = "update()">
+  <button ion-button type = "submit">View League</button>
+</form>
 </ion-content>

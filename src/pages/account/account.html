@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <form (ngSubmit) = "saveUserDetails()">
+      <ion-item>
+        <ion-label fixed>
+            Name:
+        </ion-label>
+        <ion-input [(ngModel)] = "name" name="name" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+
+        <ion-label fixed>
+            Your Team:
+        </ion-label>
+        <ion-input [(ngModel)] = "team" name="team" type="text"></ion-input>
+      </ion-item>
+<button ion-button type="submit" block>Save Details</button>
+    </form>
+  </ion-list>
+</ion-content>
