@@ -5,10 +5,11 @@
 </ion-header>
 
 <ion-content padding class = "home">
-  <h1 class = "heading"><b>Latest Sporting News</b></h1>
+  <img width = "500" height = "150" src = "https://scontent.fdub5-1.fna.fbcdn.net/v/t1.0-9/23519272_1864409643581003_3153498343275434867_n.jpg?_nc_cat=0&oh=b6ed402c4fb92a4166ee7f855a2f69fb&oe=5B5B4D35" class="center">
+ <br><hr><br>
   <ion-list>
     <ion-item *ngFor = "let news of newsStories">
-      <img width = "450" height = "300" src = "{{ news.urlToImage }}" class="center">
+      <img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center">
         <h2 align = "center">{{ news.title }}</h2>
         <p align = "center">{{ news.description }}</p>
     </ion-item>

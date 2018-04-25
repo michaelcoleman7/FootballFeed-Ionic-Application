@@ -15,6 +15,10 @@ export class AccountPage {
     profilePicture: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,private camera: Camera) {
 
+    if(this.profilePicture == null){
+      this.profilePicture = "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png";
+    }
+
     //search local storage for user name and set default if not found
     this.storage.get('name').then((n) => {
       //if found
@@ -77,7 +81,6 @@ export class AccountPage {
     this.storage.set('team' , team);
 
     this.navCtrl.push(HomePage);
-
   }
 
 }

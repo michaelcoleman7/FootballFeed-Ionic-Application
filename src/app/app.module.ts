@@ -7,7 +7,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from '../pages/settings/settings';
@@ -22,7 +21,6 @@ import { TeamsProvider } from '../providers/teams/teams';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     SettingsPage,
@@ -38,7 +36,6 @@ import { TeamsProvider } from '../providers/teams/teams';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     SettingsPage,
