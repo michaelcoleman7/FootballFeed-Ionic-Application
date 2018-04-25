@@ -1,17 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>About</ion-title>
+    <ion-title>League Table</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class = "home">
   <h1 class = "heading"><b>League Table</b></h1>
   <ion-list>
-    <h5 style=text-align:center style=word-spacing:5px><b> PL | W | D | L | PTS</b></h5>
+    <h5 style=text-align:center style=word-spacing:5px><b> PL  |&nbsp; W &nbsp;|&nbsp; D &nbsp;|&nbsp; L &nbsp;|&nbsp; PTS</b></h5>
     <ion-item *ngFor = "let td of teamData">
       <p class = "teamDiv"><img width = "30" height = "30" src = "{{ td.crestURI }}"> {{ td.teamName }}</p>
       <div class = "statsDiv">
-      <p class = "teamStats"> {{ td.playedGames }} | {{ td.wins }} | {{ td.draws }} | {{ td.losses }} | {{ td.points }}</p>
+      <p class = "teamStats"> {{ td.playedGames }} &nbsp; |&nbsp; {{ td.wins }} &nbsp;| &nbsp;{{ td.draws }} &nbsp;| &nbsp;{{ td.losses }} &nbsp;|&nbsp; {{ td.points }}</p>
       </div>  
     </ion-item>
 

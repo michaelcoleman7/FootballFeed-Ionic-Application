@@ -2,30 +2,37 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>account</ion-title>
+    <ion-title>Account Details</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div class = "profilePic">
+  <ion-card>
+    <img src= "{{ profilePicture }}"/>
+  </ion-card>
+  <button ion-button full style="font-size: 1.5vw" (click) = "takePicture()">Take Profile Picture&nbsp;&nbsp;<ion-icon name = "camera"></ion-icon></button>
+  </div>
+
+  <div class = "info">
   <ion-list>
     <form (ngSubmit) = "saveUserDetails()">
       <ion-item>
-        <ion-label fixed>
+        <ion-label>
             Name:
         </ion-label>
-        <ion-input [(ngModel)] = "name" name="name" type="text"></ion-input>
+        <ion-input style="font-size: 2vw" [(ngModel)] = "name" name="name" type="text"></ion-input>
       </ion-item>
       
       <ion-item>
 
-        <ion-label fixed>
-            Your Team:
-        </ion-label>
-        <ion-input [(ngModel)] = "team" name="team" type="text"></ion-input>
+        <ion-label>Team:</ion-label>
+        <ion-input style="font-size: 2vw" [(ngModel)] = "team" name="team" type="text"></ion-input>
       </ion-item>
-<button ion-button type="submit" block>Save Details</button>
+<button ion-button type="submit" block>Save Details&nbsp;&nbsp;<ion-icon name = "information-circle"></ion-icon></button>
     </form>
   </ion-list>
+  </div>
 </ion-content>
