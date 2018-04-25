@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -74,6 +75,8 @@ export class AccountPage {
 
     this.storage.set('name' , name);
     this.storage.set('team' , team);
+
+    this.navCtrl.push(HomePage);
 
   }
 
