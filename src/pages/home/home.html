@@ -8,6 +8,7 @@
   <img width = "500" height = "150" src = "https://scontent.fdub5-1.fna.fbcdn.net/v/t1.0-9/23519272_1864409643581003_3153498343275434867_n.jpg?_nc_cat=0&oh=b6ed402c4fb92a4166ee7f855a2f69fb&oe=5B5B4D35" class="center">
  <br><hr><br>
   <ion-list>
+    <!-- NGFor running through all news data from api -->
     <ion-item *ngFor = "let news of newsStories">
       <a href="{{ news.url}}"><img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center"></a>
         <a href="{{ news.url}}" style="color: black"><h2 align = "center">{{ news.title }}</h2></a>

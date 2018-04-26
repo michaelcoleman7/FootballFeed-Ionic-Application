@@ -9,15 +9,20 @@
 
 
 <ion-content padding>
+  <!-- profile picture html-->
   <div class = "profilePic">
   <ion-card>
+    <!-- bind src to value in ts file -->
     <img src= "{{ profilePicture }}"/>
   </ion-card>
+  <!-- vw font changes to scale with page -->
   <button ion-button full style="font-size: 1.5vw" (click) = "takePicture()">Take Profile Picture&nbsp;&nbsp;<ion-icon name = "camera"></ion-icon></button>
   </div>
 
+  <!-- user details stored in ionic storage html-->
   <div class = "info">
   <ion-list>
+    <!-- form which stores details when submitted on button click-->
     <form (ngSubmit) = "saveUserDetails()">
       <ion-item>
         <ion-label fixed>Name:</ion-label>
@@ -49,6 +54,7 @@
   </ion-list>
   </div>
 
+    <!-- links to social media html (obviously would link to app's social media's if live on app store, just link direct to social medias)-->
     <ion-fab top right edge>
     <button ion-fab mini><ion-icon name="people"></ion-icon></button>
     <ion-fab-list>

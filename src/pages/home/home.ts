@@ -14,7 +14,7 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-
+    //subscribe to news api from newsprovider
     this.newsProvider.getNews().subscribe(data => {
       console.log(data);
       this.newsStories = data.articles;

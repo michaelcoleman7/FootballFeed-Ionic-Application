@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+//import storage
 import { Storage } from '@ionic/storage';
+
+//import homepage for navcontroller navigation
+import { HomePage } from '../home/home';
+
+//import plugins
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Vibration } from '@ionic-native/vibration';
-import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -20,6 +26,7 @@ export class AccountPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,
     private camera: Camera,private vibration: Vibration) {
 
+    //if no profile picture has been taken, then set to default image below
     if(this.profilePicture == null){
       this.profilePicture = "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png";
     }
@@ -36,8 +43,10 @@ export class AccountPage {
          this.name = "Enter Name";
       }
     });
+
+    //search local storage for user team and set default if not found
+    this.storage.get('team').then((t) => {
       //if found
-      this.storage.get('team').then((t) => {
       if(t != null){
         let storedTeam = t;
         this.team = storedTeam;
@@ -47,8 +56,10 @@ export class AccountPage {
          this.team = "Enter Team";
       }
     });
-
-      this.storage.get('favPlayer').then((p) => {
+    
+    //search local storage for favorite player and set default if not found 
+    this.storage.get('favPlayer').then((p) => {
+      //if found
       if(p != null){
         let storedPlayer = p;
         this.favPlayer = storedPlayer;
@@ -59,7 +70,9 @@ export class AccountPage {
       }
     });
 
-      this.storage.get('nationality').then((nat) => {
+    //search local storage for user nationality and set default if not found
+    this.storage.get('nationality').then((nat) => {
+        //if found
       if(nat != null){
         let storedNation = nat;
         this.nationality = storedNation;
@@ -69,8 +82,9 @@ export class AccountPage {
          this.nationality = "Enter Nationality";
       }
     });
-
-      this.storage.get('dob').then((dob) => {
+    //search local storage for user name and set default if not found 
+    this.storage.get('dob').then((dob) => {
+      //if found
       if(dob != null){
         let storedDob = dob;
         this.dob = storedDob;
@@ -91,7 +105,7 @@ export class AccountPage {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true, // dsiplays in orientation taken
-      saveToPhotoAlbum: true // saves photo to users gallery
+      saveToPhotoAlbum: true, // saves photo to users gallery
   }
 
     this.camera.getPicture(options).then((imageData) => {
@@ -99,7 +113,7 @@ export class AccountPage {
     // If it's base64:
     this.profilePicture = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-    // Handle error
+        alert("Cannot Take Picture - Ensure you are on mobile device");
     });
   }
   
@@ -108,6 +122,7 @@ export class AccountPage {
     console.log('ionViewDidLoad AccountPage');
   }
 
+  //save user details to ionic storage
   saveUserDetails(){
     let name = this.name;
     let team = this.team;
@@ -115,19 +130,18 @@ export class AccountPage {
     let nationality = this.nationality;
     let dob = this.dob;
 
-    //console.log(name);
-    //console.log(team);
-
     this.storage.set('name' , name);
     this.storage.set('team' , team);
     this.storage.set('favPlayer' , favPlayer);
     this.storage.set('nationality', nationality);
     this.storage.set('dob', dob);
 
+    // vibrate upon storage of details using vibration plugin
     this.vibration.vibrate(1000);
 
     alert("Details Updated");
 
+    //navigate to homepage using navcontroller
     this.navCtrl.push(HomePage);
   }
 

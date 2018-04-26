@@ -9,6 +9,7 @@
 <ion-content padding>
   <h1 style="text-align:center"><b>Fixtures</b></h1>
   <ion-list>
+    <!-- NGFor running through all fixtures from api -->
     <ion-item *ngFor = "let f of fixtures">
       <p style="text-align:center;font-size: 2vw"> {{ f.homeTeamName }} &nbsp; VS &nbsp; {{ f.awayTeamName }}</p> 
       <p style="text-align:center;font-size: 2vw"> {{ f.result.goalsHomeTeam }} &nbsp; : &nbsp; {{ f.result.goalsAwayTeam }}</p> 

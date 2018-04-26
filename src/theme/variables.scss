@@ -4,7 +4,7 @@ $app-direction: ltr;
 
 @import "ionic.globals";
 
-
+//colour scheme for application
 $colors: (
   primary:    #00FF32,
   secondary:  #2fc862,
@@ -14,10 +14,10 @@ $colors: (
   active:     #b2c4b8
 );
 
-//Toolbar
+//Toolbar -set background colour
 $toolbar-md-background: color($colors, secondary);
 
-//Tabs
+//Tabs -set colours aswell as when active and inactive
 $tabs-md-background: color($colors, secondary);
 $tabs-md-tab-color-active:color($colors, active);
 $tabs-md-tab-color-inactive:color($colors, light);

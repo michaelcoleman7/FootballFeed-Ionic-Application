@@ -9,7 +9,7 @@ import { AccountPage } from '../account/account';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
+  //set tab roots
   tab1Root = HomePage;
   tab2Root = SettingsPage;
   tab3Root = AccountPage;
