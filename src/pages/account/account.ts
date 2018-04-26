@@ -12,6 +12,9 @@ import { HomePage } from '../home/home';
 export class AccountPage {
     name: string;
     team: string;
+    favPlayer: string;
+    nationality: string;
+    dob: string;
     profilePicture: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,private camera: Camera) {
 
@@ -40,6 +43,39 @@ export class AccountPage {
       //set to default(Not Found)
       else{
          this.team = "Enter Team";
+      }
+    });
+
+      this.storage.get('favPlayer').then((p) => {
+      if(p != null){
+        let storedPlayer = p;
+        this.favPlayer = storedPlayer;
+      }
+      //set to default(Not Found)
+      else{
+         this.favPlayer = "Enter Player";
+      }
+    });
+
+      this.storage.get('nationality').then((nat) => {
+      if(nat != null){
+        let storedNation = nat;
+        this.nationality = storedNation;
+      }
+      //set to default(Not Found)
+      else{
+         this.nationality = "Enter Nationality";
+      }
+    });
+
+      this.storage.get('dob').then((dob) => {
+      if(dob != null){
+        let storedDob = dob;
+        this.dob = storedDob;
+      }
+      //set to default(Not Found)
+      else{
+         this.dob = "dd/mm/yy";
       }
     });
   }
@@ -73,12 +109,18 @@ export class AccountPage {
   saveUserDetails(){
     let name = this.name;
     let team = this.team;
+    let favPlayer = this.favPlayer;
+    let nationality = this.nationality;
+    let dob = this.dob;
 
     //console.log(name);
     //console.log(team);
 
     this.storage.set('name' , name);
     this.storage.set('team' , team);
+    this.storage.set('favPlayer' , favPlayer);
+    this.storage.set('nationality', nationality);
+    this.storage.set('dob', dob);
 
     this.navCtrl.push(HomePage);
   }

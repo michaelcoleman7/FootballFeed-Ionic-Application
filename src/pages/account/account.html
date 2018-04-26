@@ -20,17 +20,30 @@
   <ion-list>
     <form (ngSubmit) = "saveUserDetails()">
       <ion-item>
-        <ion-label>
-            Name:
-        </ion-label>
+        <ion-label fixed>Name:</ion-label>
         <ion-input style="font-size: 2vw" [(ngModel)] = "name" name="name" type="text"></ion-input>
       </ion-item>
       
       <ion-item>
-
-        <ion-label>Team:</ion-label>
+        <ion-label fixed>Team:</ion-label>
         <ion-input style="font-size: 2vw" [(ngModel)] = "team" name="team" type="text"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Fav Player:</ion-label>
+        <ion-input style="font-size: 2vw" [(ngModel)] = "favPlayer" name="favPlayer" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Nationality:</ion-label>
+        <ion-input style="font-size: 2vw" [(ngModel)] = "nationality" name="nationality" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>D.O.B:</ion-label>
+        <ion-input style="font-size: 2vw" [(ngModel)] = "dob" name="dob" type="text"></ion-input>
+      </ion-item>
+
 <button ion-button type="submit" block>Save Details&nbsp;&nbsp;<ion-icon name = "information-circle"></ion-icon></button>
     </form>
   </ion-list>
