@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Vibration } from '@ionic-native/vibration';
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -16,7 +17,8 @@ export class AccountPage {
     nationality: string;
     dob: string;
     profilePicture: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage:Storage,
+    private camera: Camera,private vibration: Vibration) {
 
     if(this.profilePicture == null){
       this.profilePicture = "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png";
@@ -121,6 +123,10 @@ export class AccountPage {
     this.storage.set('favPlayer' , favPlayer);
     this.storage.set('nationality', nationality);
     this.storage.set('dob', dob);
+
+    this.vibration.vibrate(1000);
+
+    alert("Details Updated");
 
     this.navCtrl.push(HomePage);
   }
