@@ -10,7 +10,7 @@
   <ion-list>
     <!-- NGFor running through all news data from api -->
     <ion-item *ngFor = "let news of newsStories">
-      <a href="{{ news.url}}"><img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center"></a>
+      <a href="{{ news.url}}"><img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center"></a><br>
         <a href="{{ news.url}}" style="color: black"><h2 align = "center">{{ news.title }}</h2></a>
         <p align = "center">{{ news.description }}</p>
     </ion-item>
