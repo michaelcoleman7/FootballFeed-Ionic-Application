@@ -20,7 +20,6 @@ export class SettingsPage {
   }
 
   update(){
-    this.storage.set('League_id' , this.LeagueChosen);
     this.navCtrl.push(AboutPage, {
        leagueValue: this.LeagueChosen
     });

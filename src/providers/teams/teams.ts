@@ -25,4 +25,9 @@ export class TeamsProvider {
     return this.http.get("http://api.football-data.org/v1/competitions/"+leagueid+"/leagueTable", this.options)
     .map(res=>res.json());
   }
+
+      getFixtures(leagueid: number): Observable<any>{
+    return this.http.get("http://api.football-data.org/v1/competitions/"+leagueid+"/fixtures", this.options)
+    .map(res=>res.json());
+  }
 }
