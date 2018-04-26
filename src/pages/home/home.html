@@ -9,8 +9,8 @@
  <br><hr><br>
   <ion-list>
     <ion-item *ngFor = "let news of newsStories">
-      <img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center">
-        <h2 align = "center">{{ news.title }}</h2>
+      <a href="{{ news.url}}"><img width = "350" height = "200" src = "{{ news.urlToImage }}" class="center"></a>
+        <a href="{{ news.url}}" style="color: black"><h2 align = "center">{{ news.title }}</h2></a>
         <p align = "center">{{ news.description }}</p>
     </ion-item>
 
