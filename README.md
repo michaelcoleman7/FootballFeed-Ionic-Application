@@ -6,7 +6,7 @@ Welcome to the FootballFeed wiki!
  - G00347650
 
 ### App Name:
- - FootballFeed
+ - FootballFeed (but app name in config is G00347650)
 
 ## About: 
 Application is a football based app which is used to view the latest news in the football world, along with the ability to view league tables of the top 5 leagues in Europe (Premier League, La Liga, Bundesliga, Serie A and Ligue 1). Along with the ability to see fixtures and the results of those fixtures throughout the season. The user can also then store their information such as name, favorite team/player etc.. Along with the ability to take and store their profile picture.
